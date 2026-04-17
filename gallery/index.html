@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leslie & Rodger's Wedding</title>
+    <script>
+        if (localStorage.getItem('authenticated') !== 'true') {
+            window.location.href = '../index.html';
+        }
+    </script>
+
+    <style>
+        /* Import Andale Mono font */
+        @import url('https://fonts.googleapis.com/css2?family=Andale+Mono&display=swap');
+
+        /* Center the content of the main section */
+        main {
+            text-align: center;
+            padding: 0px; /* Add some padding around the content */
+        }
+
+        /* Style for <p> tags inside the main section */
+        main p {
+            font-size: 20px; /* Adjust font size */
+            padding-top: 0px; /* Add top padding */
+            padding-bottom: 0px; /* Add bottom padding */
+            
+        }
+
+        .bigheading {
+            font-family: 'Arial', sans-serif; /* Sets the font */
+            font-size: 48px; /* Make the times a little larger */
+            color: rgb(0, 0, 0);   
+            margin-bottom: 45px;   
+            margin-top: 0px; 
+        }
+
+
+        /* Specific style for the time-related <p> tags */
+        .smalltitle {
+            font-family: 'Andale Mono', monospace; /* Change the font for times */
+            font-size: 22px; /* Make the times a little larger */
+            /* font-weight: bold; Make the time bold */
+            padding-top: 0px; /* Add more top padding for times */
+            padding-bottom: 20px; /* Less padding at the bottom for times */
+            margin: 0;
+        }
+
+        /* Description style for the event details */
+        .description {
+            font-family: 'Arial', sans-serif; /* Sets the font */
+            font-size: 22px; /* Make the times a little larger */
+            color: rgb(0, 0, 0);
+            padding-top: 8px; /* Add more top padding for times */
+            padding-bottom: 50px; /* Less padding at the bottom for times */
+            margin: 0px 10% 0px 10%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <div id="header">
+        
+        <style>
+            /* Apply styles to the entire header div */
+            #header {
+                padding-bottom: 50px; /* Adds padding below the header */
+            }
+            /* Import Andale Mono font */
+            @import url('https://fonts.googleapis.com/css2?family=Andale+Mono&display=swap');
+            
+            /* Apply styles to the entire header div */
+            #header {
+                text-align: center; /* Centers all content inside the #header div */
+                font-family: 'Arial', sans-serif; /* Sets the font for all content inside the #header */
+            }
+    
+            /* Style for the navigation links container */
+            .nav-links {
+                margin-top: 20px; /* Adds space above the navigation links */
+                border-top: 1px solid black; /* Black horizontal line above */
+                border-bottom: 1px solid black; /* Black horizontal line below */
+                padding-top: 30px; /* Adds padding between the top line and the links */
+                padding-bottom: 30px; /* Adds padding between the links and the bottom line */
+            }
+    
+            /* Style for each link inside the navigation */
+            .nav-links a {
+                font-family: 'Andale Mono', monospace; /* Change the font for times */
+                padding: 0 16px; /* Adds horizontal space between each navigation link */
+                text-decoration: none; /* Removes the underline from the links */
+                font-size: 20px;
+                color: rgb(0, 0, 0);
+            }
+    
+            /* Adding Flexbox to the main content */
+            .side-by-side {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                padding: 20px;
+            }
+    
+            /* Style for left side */
+            .left {
+                margin: 0px 0px 0px 0px;
+                width: 100%;
+                font-family: Arial, sans-serif;
+                font-size: 20px;
+                text-align: left;
+            }
+    
+            /* Style for right side */
+            .right {
+                margin: 0px 0px 0px 0px;
+                width: 100%;
+                font-size: 20px;
+                text-align: right;
+                font-family: 'Andale Mono', monospace; /* Change the font for times */
+            }
+    
+            /* Remove underline specifically from the RSVP link */
+            .right a {
+                text-decoration: none; /* Removes underline for the RSVP link */
+                color: rgb(255, 255, 255); /* Same color as other links */
+            }
+
+            .rsvp-box {
+                background-color: #000000; /* periwinkle */
+                padding: 6px 14px;
+                border-radius: 8px;
+                /* font-weight: bold; */
+                box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+            }
+    
+        </style>
+    
+        <!-- Example of side-by-side paragraphs using Flexbox -->
+        <div class="side-by-side">
+            <p class="left">leslie & rodger</p>
+            <div class="right">
+                <a href="../rsvp/index.html"><span class="rsvp-box">rsvp</span></a>
+            </div>
+        </div>
+    
+        <!-- Navigation links for the website -->
+        <div class="nav-links">
+            <a href="../schedule/index.html">schedule</a> <!-- Link to the schedule page -->
+            <a href="../details/index.html">details</a> <!-- Link to the details page -->
+            <a href="index.html" style="text-decoration: underline;">gallery</a> <!-- Link to the gallery page -->
+        </div>
+    </div>
+
+    
+    <main>
+        <p class="bigheading">gallery</p>
+
+        <!-- Event Schedule -->
+        <p class="description">please take a moment to browse through the memories we've captured. 
+            from candid moments to beautiful details, this gallery showcases the joy, laughter, 
+            and love shared on our special day. we hope you enjoy reliving these moments with us! </p>
+
+        <!-- 2-Column Layout -->
+
+        <div class="gallery one-column">
+            <img src="red1.jpg" alt="Photo 1" class="column-photo">
+        </div>
+
+        <div class="gallery two-columns">
+            <img src="red2.jpg" alt="Photo 1" class="column-photo">
+            <img src="red3.jpg" alt="Photo 2" class="column-photo">
+        </div>
+
+        <!-- 3-Column Layout -->
+        <div class="gallery three-columns">
+            <img src="park2.jpg" alt="Photo 1" class="column-photo">
+            <img src="park1.jpg" alt="Photo 2" class="column-photo">
+            <img src="park3.jpg" alt="Photo 3" class="column-photo">
+        </div>
+
+
+
+        <div class="gallery two-columns">
+            <img src="window0.jpg" alt="Photo 1" class="column-photo">
+            <img src="window1.jpg" alt="Photo 2" class="column-photo">
+        </div>
+
+        <div class="gallery two-columns">
+            <img src="indoor1.jpg" alt="Photo 1" class="column-photo">
+            <img src="indoor2.jpg" alt="Photo 2" class="column-photo">
+        </div>
+
+        <div class="gallery two-columns">
+            <img src="cherry.jpg" alt="Photo 1" class="column-photo">
+            <img src="cherry2.jpg" alt="Photo 2" class="column-photo">
+        </div>        
+
+
+
+        <!-- 3-Column Layout -->
+        <div class="gallery three-columns">
+            <img src="beach.jpg" alt="Photo 1" class="column-photo">
+            <img src="millie.jpg" alt="Photo 2" class="column-photo">
+            <img src="graduation.jpg" alt="Photo 3" class="column-photo">
+        </div>
+
+
+        <div class="gallery three-columns">
+            <img src="costume3.jpg" alt="Photo 1" class="column-photo">
+            <img src="costume4.jpg" alt="Photo 2" class="column-photo">
+        </div>
+
+        <div class="gallery three-columns">
+            <img src="costume1.jpg" alt="Photo 1" class="column-photo">
+            <img src="costume.jpg" alt="Photo 2" class="column-photo">
+            <img src="costume2.jpg" alt="Photo 3" class="column-photo">
+        </div>
+
+
+        <style>
+            /* Gallery container with general bottom spacing */
+            .gallery {
+                display: flex;
+                gap: 2%;
+                justify-content: center;
+                margin-bottom: 2%;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            /* All gallery images */
+            .one-column img {
+                width: 100%;
+                border-radius: 30px;
+            }
+
+            /* 2-column layout */
+            .two-columns img {
+                width: 50%;
+                border-radius: 30px;
+            }
+
+            /* 3-column layout */
+            .three-columns img {
+                width: 33.33%;
+                border-radius: 30px;
+            }
+
+        </style>
+
+
+
+
+    </main>
+
+    <div id="footer">
+        <style>
+            /* Apply styles to the entire footer div */
+            #footer {
+                text-align: center; /* Centers all content inside the #footer div */
+                font-family: 'Arial', sans-serif; /* Sets the font for all content inside the footer */
+                margin-top: 40px; /* Adds space above the footer content */
+                padding: 20px; /* Adds space inside the footer */
+                /* background-color: #f1f1f1; Gives a light background color to the footer */
+                opacity: 0.35;
+            }
+    
+            /* Style for the credits section */
+            #footer .credits {
+                font-size: 0.9em; /* Slightly smaller font for credits */
+                color: #000000; /* Sets a grey color for the credits text */
+            }
+        </style>
+    
+        <!-- Credits section -->
+        <p class="credits">
+            designed & developed by leslie & rodger
+        </p>
+    </div>
+
+ 
+</body>
+</html>

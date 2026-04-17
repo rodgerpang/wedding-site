@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodger & Leslie's Wedding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 180px;
+            border-radius: 25px; /* Rounded edges */
+            font-family: 'Andale Mono', monospace;
+            border: 2px solid black;
+
+        }
+        button {
+            margin-top: 50px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ffaab9;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            font-family: 'Andale Mono', monospace;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <style>
+        .text1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 30px;
+            color: rgb(0, 0, 0);
+            padding-top: 8px;
+            padding-bottom: 0px;
+            margin: 0;
+            text-align: center;
+        }
+    
+        .millie {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
+        }
+    
+        .millie img {
+            max-width: 90%;
+            height: auto;
+            display: block;
+            margin-top: 50px;
+            margin-bottom: 50px;
+    
+            opacity: 0;
+            animation: fadeIn 10s ease-in-out forwards;
+        }
+    
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <p class="text1">hi, it's leslie & rodger.</p>
+    <div class="millie">
+        <img src="millie.png" alt="Photo 1" class="column-photo">
+    </div>
+    <p class="text1">enter the passcode to continue to the wedding site.</p>
+
+
+
+
+    <!-- Password Input -->
+    <input type="password" id="password" placeholder="enter password">
+    <button onclick="checkPassword()">go</button>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password.toLowerCase() === 'millie') {
+                localStorage.setItem('authenticated', 'true');
+                window.location.href = 'rsvp/index.html';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+
+        // Allow Enter key to submit password
+        document.getElementById('password').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+    </script>
+
+</body>
+</html>

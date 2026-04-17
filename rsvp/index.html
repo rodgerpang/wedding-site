@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leslie & Rodger's Wedding</title>
+    <script>
+        if (localStorage.getItem('authenticated') !== 'true') {
+            window.location.href = '../index.html';
+        }
+    </script>
+    <style>
+        /* Import Andale Mono font */
+        @import url('https://fonts.googleapis.com/css2?family=Andale+Mono&display=swap');
+
+        /* Center the content of the main section */
+        main {
+            text-align: center;
+            padding: 0px; /* Add some padding around the content */
+        }
+
+        /* Style for <p> tags inside the main section */
+        main p {
+            font-size: 20px; /* Adjust font size */
+            padding-top: 0px; /* Add top padding */
+            padding-bottom: 0px; /* Add bottom padding */
+            
+        }
+
+        .bigheading {
+            font-family: 'Arial', sans-serif; /* Sets the font */
+            font-size: 48px; /* Make the times a little larger */
+            color: rgb(0, 0, 0);   
+            margin-bottom: 45px;   
+            margin-top: 0px; 
+        }
+
+
+        /* Specific style for the time-related <p> tags */
+        .smalltitle {
+            font-family: 'Andale Mono', monospace; /* Change the font for times */
+            font-size: 22px; /* Make the times a little larger */
+            /* font-weight: bold; Make the time bold */
+            padding-top: 0px; /* Add more top padding for times */
+            padding-bottom: 0px; /* Less padding at the bottom for times */
+            margin: 0;
+        }
+
+        /* Description style for the event details */
+        .description {
+            font-family: 'Arial', sans-serif; /* Sets the font */
+            font-size: 24px; /* Make the times a little larger */
+            color: rgb(0, 0, 0);
+            padding-top: 0px; /* Add more top padding for times */
+            padding-bottom: 30px; /* Less padding at the bottom for times */
+            margin: 0px 10% 0px 10%;
+        }
+
+        .rsvp-box {
+            background-color: #000000; /* periwinkle */
+            padding: 6px 14px;
+            border-radius: 8px;
+            /* font-weight: bold; */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        select {
+            margin: 8px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 25px; /* Rounded edges */
+            font-family: 'Andale Mono', monospace;
+            border: 2px solid black;      
+            width: 130px; /* Set a specific width */
+            max-width: 90%; /* Make sure it doesn’t overflow on smaller screens */
+        }
+
+        button {
+            margin-top: 8px;
+            margin-bottom: 16px; /* editthis */
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ffaab9;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            font-family: 'Andale Mono', monospace;     
+            justify-content: center;    
+            width: 150px; /* Set a specific width */
+            max-width: 90%; /* Make sure it doesn’t overflow on smaller screens */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+
+    </style>
+</head>
+
+<div id="header">
+    <style>
+        /* Apply styles to the entire header div */
+        #header {
+            padding-bottom: 50px; /* Adds padding below the header */
+        }
+        /* Import Andale Mono font */
+        @import url('https://fonts.googleapis.com/css2?family=Andale+Mono&display=swap');
+        
+        /* Apply styles to the entire header div */
+        #header {
+            text-align: center; /* Centers all content inside the #header div */
+            font-family: 'Arial', sans-serif; /* Sets the font for all content inside the #header */
+        }
+
+        /* Style for the navigation links container */
+        .nav-links {
+            margin-top: 20px; /* Adds space above the navigation links */
+            border-top: 1px solid black; /* Black horizontal line above */
+            border-bottom: 1px solid black; /* Black horizontal line below */
+            padding-top: 30px; /* Adds padding between the top line and the links */
+            padding-bottom: 30px; /* Adds padding between the links and the bottom line */
+        }
+
+        /* Style for each link inside the navigation */
+        .nav-links a {
+            font-family: 'Andale Mono', monospace; /* Change the font for times */
+            padding: 0 16px; /* Adds horizontal space between each navigation link */
+            text-decoration: none; /* Removes the underline from the links */
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+
+        /* Adding Flexbox to the main content */
+        .side-by-side {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        /* Style for left side */
+        .left {
+            margin: 0px 0px 0px 0px;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        /* Style for right side */
+        .right {
+            margin: 0px 0px 0px 0px;
+            width: 100%;
+            font-size: 20px;
+            text-align: right;
+            font-family: 'Andale Mono', monospace; /* Change the font for times */
+        }
+
+        /* Remove underline specifically from the RSVP link */
+        .right a {
+            text-decoration: underline; /* Adds an underline to the RSVP link */
+            color: rgb(255, 255, 255); /* Keeps the color the same as other links */
+        }
+
+        .greeting {
+            font-family: 'Arial', sans-serif; /* Sets the font */
+            font-size: 24px; /* Make the times a little larger */
+            color: rgb(0, 0, 0);
+            padding-top: 16px; /* Add more top padding for times */
+            padding-bottom: 0px; /* Less padding at the bottom for times */
+            margin: 0px 10% 0px 10%;
+        }
+
+        .greeting2 {
+            font-family: 'Andale Mono', monospace; /* Change the font for times */
+            font-size: 16px; /* Make the times a little larger */
+            color: rgb(0, 0, 0);
+            padding-top: 16px; /* Add more top padding for times */
+            padding-bottom: 0px; /* Less padding at the bottom for times */
+            margin: 0px 10% 0px 10%;
+    </style>
+
+    <!-- Navigation links for the website -->
+    <div class="side-by-side">
+        <p class="left">leslie & rodger</p>
+        <div class="right">
+            <a href="index.html"><span class="rsvp-box">rsvp</span></a>
+        </div>
+    </div>
+
+
+    <!-- Navigation links for the website -->
+    <div class="nav-links">
+        <a href="../schedule/index.html">schedule</a> <!-- Link to the schedule page -->
+        <a href="../details/index.html">details</a> <!-- Link to the details page -->
+        <a href="../gallery/index.html">gallery</a> <!-- Link to the gallery page -->
+    </div>
+</div>
+
+
+    <main>
+        <p class="bigheading">rsvp</p>
+
+        <!-- Event Schedule -->
+        <p class="description">enter your name below.</p>
+
+        <div>
+            <input type="text" id="first-name" placeholder="first Name" />
+        </div>
+        <div>
+            <input type="text" id="last-name" placeholder="last Name" />
+        </div>
+        <div style="text-align: center;">
+            <button onclick="checkRSVP()">check rsvp</button>
+        </div>
+
+        <div id="a1-value-container"></div>
+    </main>
+
+    <div id="footer">
+        <style>
+            /* Apply styles to the entire footer div */
+            #footer {
+                text-align: center; /* Centers all content inside the #footer div */
+                font-family: 'Arial', sans-serif; /* Sets the font for all content inside the footer */
+                margin-top: 40px; /* Adds space above the footer content */
+                padding: 20px; /* Adds space inside the footer */
+                /* background-color: #f1f1f1; Gives a light background color to the footer */
+                opacity: 0.35;
+            }
+    
+            /* Style for the credits section */
+            #footer .credits {
+                font-size: 0.9em; /* Slightly smaller font for credits */
+                color: #000000; /* Sets a grey color for the credits text */
+            }
+        </style>
+    
+        <!-- Credits section -->
+        <p class="credits">
+            designed & developed by leslie & rodger
+        </p>
+    </div>
+    
+
+    <script>
+        const allowedGuests = [
+            { first: "Rodger", last: "Pang" },
+            { first: "Leslie", last: "Wang" },
+
+            { first: "Larry", last: "Wang" },
+            { first: "Irene", last: "Cao" },
+            { first: "James", last: "Pang" },
+            { first: "Evelyn", last: "Pang" },
+            { first: "Ryan", last: "Gittleson" },
+            { first: "Jeffrey", last: "Wang" },
+            { first: "Cassidy", last: "Chansirik" },
+            { first: "Maya", last: "Cao" },
+            { first: "Edward", last: "Liu" },
+
+            { first: "Andrew", last: "Chan" },
+            { first: "Kristen", last: "Lum" },
+            { first: "Emmitt", last: "Burk" },
+            { first: "Katherine", last: "Yang" },
+            { first: "Kevin", last: "Wang" },
+            { first: "Samuel", last: "Yauk" },
+            { first: "Zumin", last: "Chen" },
+            { first: "Cindy", last: "Chen" },
+            { first: "Jonathan", last: "Yip" },
+            { first: "Kailen", last: "Swain" },
+            { first: "Kiyana", last: "Middleswart" },
+            // Add more guests here
+        ];
+
+        function checkRSVP() {
+            const first = document.getElementById("first-name").value.trim();
+            const last = document.getElementById("last-name").value.trim();
+
+            const isAllowed = allowedGuests.some(
+                g => g.first.toLowerCase() === first.toLowerCase() &&
+                     g.last.toLowerCase() === last.toLowerCase()
+            );
+
+            if (!isAllowed) {
+                alert("Sorry, you’re not on the guest list.");
+                return;
+            }
+
+            fetchLatestRSVP(first, last);
+        }
+
+        function fetchLatestRSVP(firstName, lastName) {
+            const sheetId = "121xHN9vq-vhGsXbGNFENLFtchdZs16gdAQ-azwo3vXE"; // your sheet ID
+            const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tq=${encodeURIComponent("SELECT *")}`;
+
+            fetch(url)
+                .then(res => res.text())
+                .then(data => {
+                    const json = JSON.parse(data.substring(data.indexOf('{'), data.lastIndexOf('}') + 1));
+                    const rows = json.table.rows;
+
+                    if (!rows || rows.length === 0) {
+                        showRSVPForm(firstName, lastName, null);
+                        return;
+                    }
+
+                    const entries = rows.map(row => ({
+                        timestamp: fixDate(row.c[0]?.f || row.c[0]?.v), // Timestamp from column 0
+                        first: row.c[1]?.v || "",
+                        last: row.c[2]?.v || "",
+                        attending: row.c[3]?.v || "",
+
+                    }));
+
+                    // Filter all matching names (case-insensitive)
+                    const matches = entries.filter(e =>
+                        e.first.toLowerCase() === firstName.toLowerCase() &&
+                        e.last.toLowerCase() === lastName.toLowerCase()
+                    );
+
+                    if (matches.length === 0) {
+                        showRSVPForm(firstName, lastName, null);
+                        return;
+                    }
+
+                    // Sort by timestamp (most recent first)
+                    matches.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+                    showRSVPForm(firstName, lastName, matches[0]); // use most recent
+                })
+                .catch(err => {
+                    console.error("Error fetching RSVP data:", err);
+                    alert("Could not check your RSVP status. Please try again later.");
+                });
+        }
+
+
+
+
+        function fixDate(str) {
+            if (!str) return null;
+            const [date, time] = str.split(" ");
+            const [month, day, year] = date.split("/");
+            return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${time}`;
+        }
+
+        function showRSVPForm(first, last, existingData) {
+            const container = document.getElementById("a1-value-container");
+            let html = `<p class="greeting">hi ${first.toLowerCase()}.</p>`;
+
+
+            if (existingData) {
+                html += `
+                    <p class="greeting">would you like to edit your rsvp?</p>
+                    <p class="greeting2">coming: ${existingData.attending}</p>
+                    <button onclick="renderForm('${first}', '${last}', true)">edit</button>
+                `;
+            } else {
+                html += `<button onclick="renderForm('${first}', '${last}', false)">rsvp now</button>`;
+            }
+
+            container.innerHTML = html;
+        }
+
+        function renderForm(first, last, isEdit) {
+            const container = document.getElementById("a1-value-container");
+            container.innerHTML = `
+                <form onsubmit="submitRSVP(event, '${first}', '${last}')">
+                    <p class="greeting">are you coming?</p>
+                    <select name="attending" required>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+
+                    <br />
+                    <button type="submit">${isEdit ? "update rsvp" : "submit rsvp"}</button>
+                </form>
+            `;
+
+        }
+
+        function submitRSVP(event, first, last) {
+            event.preventDefault();
+
+            const attending = document.querySelector("select[name='attending']").value;
+            const formUrl = "https://docs.google.com/forms/d/1Mo1nlXK0j6Pwny9U6wlKrVv3kmHnkfwS_SmEJz3qVbs/formResponse"; // replace with your actual form URL
+            const formData = new FormData();
+
+            formData.append("entry.841300474", first.toLowerCase());
+            formData.append("entry.1186545421", last.toLowerCase());
+            formData.append("entry.1977640725", attending.toLowerCase());
+
+            fetch(formUrl, {
+                method: "POST",
+                mode: "no-cors",
+                body: formData
+            }).then(() => {
+                document.getElementById("a1-value-container").innerHTML = `
+                    <p class="greeting2">your rvsp has been updated</p>
+                `;
+            }).catch(() => {
+                document.getElementById("a1-value-container").innerHTML = `
+                    <p class="greeting2">error occured while submitting</p>
+                `;
+            });
+        }
+
+    </script>
+
+    
+</body>
+
+</html>
